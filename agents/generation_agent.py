@@ -12,7 +12,7 @@ load_dotenv()
 def generation_agent(content, system_prompt, model="gpt-4.1-mini", retries=3, base_wait=2):
     for attempt in range(retries):
         try:
-            response = openai_client.responses.create(
+            response = llm_client.responses.create(
                 model=model,
                 input=[
                     {"role": "system", "content": system_prompt},

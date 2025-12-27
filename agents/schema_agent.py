@@ -10,7 +10,7 @@ load_dotenv()
 def generate_dataset_schema(
     user_concept: str, model: str = "gpt-4.1-mini"
 ) -> DatasetSchema:
-    response = openai_client.responses.parse(
+    response = llm_client.responses.parse(
         model=model,
         input=[
             {"role": "system", "content": schema_generate_prompt},

@@ -12,4 +12,5 @@ python-multipart
 rich
 pyfiglet
 google-genai
-pdfplumber
+pdfplumberlangchain-ollama
+langchain-ollama
