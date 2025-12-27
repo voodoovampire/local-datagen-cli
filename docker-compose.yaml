@@ -16,6 +16,19 @@ services:
     volumes:
       - ./qdrant_data:/qdrant/storage
 
+  app:
+    build: .
+    container_name: local_datagen_app
+    depends_on:
+      - qdrant
+    environment:
+      - QDRANT_URL=http://qdrant:6333
+    volumes:
+      - ./output_files:/app/output_files
+      - ./resources:/app/resources
+    stdin_open: true
+    tty: true
+
 configs:
   qdrant_config:
     content: |
